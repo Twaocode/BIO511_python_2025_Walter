@@ -30,17 +30,15 @@ print(counts)
 
 def text_summarise(s:str):
     assert isinstance(s, str), 'Strings only!'
-    digits = 0
-    letters = 0 
-    other = 0
+    dictm = dict({'digits':0, 'letters':0, 'other':0})
     for a in s:
         if a.isdigit() == True:
-            digits += 1
+            dictm['digits'] += 1
         elif a.isalpha() == True:
-            letters += 1
+            dictm['letters'] += 1
         elif a.isdigit() == False and s.isalpha() == False:
-            other += 1
-    return(digits, letters, other)
+            dictm['other'] += 1
+    return(dictm)
 
 given_text = text_summarise(text)
 print(given_text)
